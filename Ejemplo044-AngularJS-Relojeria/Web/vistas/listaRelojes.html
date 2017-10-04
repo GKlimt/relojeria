@@ -1,0 +1,44 @@
+<div ng-controller="listaRelojesCtrl" class="panel panel-default row">
+
+	<!-- Botonera con las marcas -->
+	<div class="col-xs-3">
+
+		<a ng-click="seleccionarMarca()"
+			class="btn btn-block btn-default btn-lg"> Inicio </a> <a
+			ng-repeat="marcaReloj in datos.relojes | orderBy:'marca' | noduplicados:'marca'"
+			class="btn btn-block btn-default btn-lg"
+			ng-click="seleccionarMarca(marcaReloj)"
+			ng-class="resaltarMarca(marcaReloj)"> {{marcaReloj}} </a>
+	</div>
+
+	<!-- Parte de la derecha donde se visualizan los relojes -->
+	<div class="col-xs-8">
+
+		<!-- Filtrar los relojes por la marca seleccionada -->
+		<div class="well"
+			ng-repeat="item in datos.relojes | filter:filtrarPorMarca | paginar:paginaSeleccionada:tamanioPagina">
+
+			<h3>
+				<strong>{{item.modelo}}</strong> <span
+					class="pull-right label label-primary"> {{item.precio |
+					currency}} </span>
+			</h3>
+			<!-- Boton para agregar al carro el reloj -->
+			<button class="btn btn-success pull-right"
+				ng-click="agregarRelojCarro(item)">Comprar</button>			
+			<div class="lead">{{item.descripcion}}</div>
+		</div>
+
+		<!-- Parte inferior de la pagina. Establecemos 
+				botones para el sistema de paginacion de 
+				los resultados -->
+		<div class="pull-rigth btn-group">
+			<a
+				ng-repeat="pagina in datos.relojes | filter:filtrarPorMarca | numeroPaginas:tamanioPagina"
+				ng-click=seleccionarPagina($index+1) class="btn btn-default"
+				ng-class="resaltarPagina($index+1)"> {{$index+1}} </a>
+		</div>
+
+	</div>
+
+</div>

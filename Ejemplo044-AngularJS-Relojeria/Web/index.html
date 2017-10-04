@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="relojesApp">
+<head>
+<meta charset="UTF-8">
+<title>Relojeria Online</title>
+<link rel="stylesheet" href="resources/styles/bootstrap.min.css" />
+<link rel="stylesheet" href="resources/styles/bootstrap-theme.min.css" />
+</head>
+<body ng-controller="relojesAppCtrl">
+
+	<div class="navbar navbar-inverse">
+		<a class="navbar-brand" href="#"> Relojeria OnLine </a>
+
+		<!-- Crear directiva <resumen-carro /> -->
+		<resumen-carro />
+		
+	</div>
+
+	<!-- Mostrar si hay error a la hora de cargar los datos -->
+	<div class="alert alert-danger" ng-show="datos.error">
+		No se han podido cargar los datos
+		<a href="index.html" class="alert-link">
+			Intentar de nuevo
+		</a>
+	</div>
+
+	<!-- Directiva para cargar las paginas parciales definidas
+		 en el sistema de enrutamiento (ngRoute) de AngularJS -->
+	<div ng-view></div>
+
+	<!-- AngularJS -->
+	<script type="text/javascript" src="resources/scripts/angular.min.js"></script>
+
+	<!-- AngularJS Routing -->
+	<script type="text/javascript" src="resources/scripts/angular-route.min.js"></script>
+
+	<!-- AngularJS Locale (para Español) -->
+	<script type="text/javascript"
+		src="resources/scripts/angular-locale.min.js"></script>
+
+	<script type="text/javascript">
+		// Creacion del modulo principal de la aplicacion
+		// cargando el modulo filtros, carro y ngRoute
+		var relojesApp = angular.module("relojesApp", 
+				[ "filtros", "carro", "ngRoute" ]);
+		
+		// Configurar enrutamiento
+		// Crear bloque config (se ejecuta al comienzo de la App)
+		// para configurar el sistema de enrutamiento mediante el
+		// servicio $routeProvider
+		relojesApp.config([ "$routeProvider", function($routeProvider) {
+			// Configurar cada una de las rutas contempladas
+			$routeProvider.when("/revision", {
+				templateUrl : "vistas/resumenRevision.html"
+			});
+			$routeProvider.when("/productos", {
+				templateUrl : "vistas/listaRelojes.html"
+			});
+			// Cualquier otra URL que no sea las anteriores
+			$routeProvider.otherwise({
+				templateUrl : "vistas/listaRelojes.html"
+			});
+		} ]);
+	</script>
+
+	<script type="text/javascript" 
+		src="resources/scripts/controladores/almacen.js"></script>
+
+	<script type="text/javascript" 
+		src="resources/scripts/filtros/filtros.js"></script>
+
+	<script type="text/javascript" 
+		src="resources/scripts/controladores/productos.js"></script>
+	
+	<script type="text/javascript" 
+		src="componentes/carro/carro.js"></script>
+	
+	<script type="text/javascript" 
+		src="resources/scripts/controladores/revision.js"></script>
+</body>
+</html>

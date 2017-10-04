@@ -1,0 +1,58 @@
+<h2>Tu Carro</h2>
+<div ng-controller="resumenCarroCtrl">
+
+	<!-- Mostrar cuando NO hay elementos en el carro -->
+	<div ng-show="datosCarro.length === 0"
+		class="alert alert-warning">
+	
+		No tienes productos en el carro de la compra
+	
+		<a class="alert-link" href="#/productos">Volver al catálogo</a>
+	</div>
+
+
+	<!-- Ocultar cuando NO hay elementos en el carro -->
+	<div ng-hide="datosCarro.length === 0">
+		<table class="table">
+			<thead>
+				<th>Cantidad</th>
+				<th>Reloj</th>
+				<th class="text-right">Precio</th>
+				<th class="text-right">Subtotal</th>
+			</thead>
+			<tbody>
+				<!-- Generar una fila por cada elemento del carro -->
+				<tr ng-repeat="item in datosCarro">
+					<td class="text-center">{{item.cantidad}}</td>
+					<td class="text-left">{{item.producto}}</td>
+					<td class="text-right">{{item.precio | currency}}</td>
+					<td class="text-right">
+					{{(item.cantidad * item.precio) | currency}}</td>
+					<td>
+						<!-- Boton de eliminar -->
+						<button ng-click="eliminar(item.id)"
+							class="btn btn-warning btn-sm">Eliminar</button>
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3" class="text-right">
+					Total:
+					</td>
+					<td class="text-right">
+					{{total() | currency}}
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+		
+		<div class="text-center">
+			<a class="btn btn-primary" href="#/productos">
+				Continuar comprando
+			</a>
+		</div>
+	</div>
+	
+	
+</div>

@@ -1,0 +1,65 @@
+[
+	{
+		"id": 1,
+		"modelo": "DIESEL MR. DADDY 2.0 DZ7350",
+		"descripcion": "Movimiento de cuarzo. Analógico. Correa de piel. Cristal mineral",
+		"marca": "Diesel",
+		"precio": 349
+	},
+	{
+		"id": 2,
+		"modelo": "DIESEL WATCH TIPTRONIC - LIMITED EDITION DZ7280",
+		"descripcion": "Movimiento de cuarzo. Analógico. Correa de piel. Cristal mineral",
+		"marca": "Diesel",
+		"precio": 595
+	},
+	{
+		"id": 3,
+		"modelo": "DIESEL WATCH MOD. DIGITALE DZ7168",
+		"descripcion": "Movimiento de cuarzo. Digital. Correa de caucho",
+		"marca": "Diesel",
+		"precio": 139
+	},
+	{
+		"id": 4,
+		"modelo": "DIESEL WATCH STUD DZ1647",
+		"descripcion": "Movimiento de cuarzo. Analógico. Correa de plástico. Cristal mineral",
+		"marca": "Diesel",
+		"precio": 159
+	},
+	{
+		"id": 5,
+		"modelo": "LOTUS 18239/4",
+		"descripcion": "Movimiento de cuarzo. Analógico. Correa de piel. Cristal mineral",
+		"marca": "Lotus",
+		"precio": 67
+	},
+	{
+		"id": 6,
+		"modelo": "LOTUS 15975/1",
+		"descripcion": "Movimiento de cuarzo. Analógico. Correa de acero. Cristal mineral",
+		"marca": "Lotus",
+		"precio": 84
+	},
+	{
+		"id": 7,
+		"modelo": "VICEROY 46591-95",
+		"descripcion": "Movimiento de cuarzo. Analógico. Correa de acero. Cristal mineral",
+		"marca": "Viceroy",
+		"precio": 77
+	},
+	{
+		"id": 8,
+		"modelo": "VICEROY 42209-55",
+		"descripcion": "Movimiento de cuarzo. Analógico. Correa de tela. Cristal mineral",
+		"marca": "Viceroy",
+		"precio": 96
+	},
+	{
+		"id": 9,
+		"modelo": "VICEROY 432850-05",
+		"descripcion": "Movimiento de cuarzo. Analógico. Correa de acero. Cristal mineral",
+		"marca": "Viceroy",
+		"precio": 115
+	}
+]
